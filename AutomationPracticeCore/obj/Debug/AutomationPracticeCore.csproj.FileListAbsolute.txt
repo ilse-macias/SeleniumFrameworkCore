@@ -1,0 +1,12 @@
+/Users/ilsemacias/Projects/AutomationPracticeCore/AutomationPracticeCore/obj/Debug/AutomationPracticeCore.csprojAssemblyReference.cache
+/Users/ilsemacias/Projects/AutomationPracticeCore/AutomationPracticeCore/obj/Debug/AutomationPracticeCore.csproj.CoreCompileInputs.cache
+/Users/ilsemacias/Projects/AutomationPracticeCore/AutomationPracticeCore/bin/Debug/AutomationPracticeCore.dll
+/Users/ilsemacias/Projects/AutomationPracticeCore/AutomationPracticeCore/bin/Debug/AutomationPracticeCore.pdb
+/Users/ilsemacias/Projects/AutomationPracticeCore/AutomationPracticeCore/bin/Debug/nunit.framework.dll
+/Users/ilsemacias/Projects/AutomationPracticeCore/AutomationPracticeCore/bin/Debug/WebDriver.dll
+/Users/ilsemacias/Projects/AutomationPracticeCore/AutomationPracticeCore/bin/Debug/nunit.framework.pdb
+/Users/ilsemacias/Projects/AutomationPracticeCore/AutomationPracticeCore/bin/Debug/nunit.framework.xml
+/Users/ilsemacias/Projects/AutomationPracticeCore/AutomationPracticeCore/bin/Debug/WebDriver.xml
+/Users/ilsemacias/Projects/AutomationPracticeCore/AutomationPracticeCore/obj/Debug/AutomationPracticeCore.csproj.CopyComplete
+/Users/ilsemacias/Projects/AutomationPracticeCore/AutomationPracticeCore/obj/Debug/AutomationPracticeCore.dll
+/Users/ilsemacias/Projects/AutomationPracticeCore/AutomationPracticeCore/obj/Debug/AutomationPracticeCore.pdb
