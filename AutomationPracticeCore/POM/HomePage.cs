@@ -7,6 +7,10 @@ namespace AutomationPracticeCore.POM
     {
         public IWebDriver _driver;
 
+
+        private IWebElement searchBar;
+        private IWebElement searchIcon;
+
         private IWebElement signInButton;
 
         private IWebElement emailAddressField;
@@ -17,6 +21,12 @@ namespace AutomationPracticeCore.POM
             this._driver = _driver;
         }
 
+        public void Search()
+        {
+            searchBar = _driver.FindElement(By.Id("search_query_top"));
+            searchBar.SendKeys("blouse");
+            searchIcon = _driver.FindElement(By.ClassName("btn btn-default button-search"));
+        }
         public void SignIn()
         {
             signInButton = _driver.FindElement(By.ClassName("login"));

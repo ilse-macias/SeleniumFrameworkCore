@@ -22,6 +22,13 @@ namespace AutomationPracticeCore
         }
 
         [Test()]
+        public void SearchProduct()
+        {
+            HomePage homePage = new HomePage(_driver);
+            homePage.Search();
+        }
+
+        [Test()]
         public void ValidateSignIn()
         {
             HomePage homePage = new HomePage(_driver);
