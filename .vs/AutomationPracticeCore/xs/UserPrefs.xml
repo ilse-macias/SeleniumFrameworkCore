@@ -1,7 +1,10 @@
 ﻿<Properties StartupConfiguration="{6CC54288-1FC6-49DA-B9AD-6A3B0461D115}|Unit Tests">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="AutomationPracticeCore/Locators/SignInLocators.cs">
     <Files>
-      <File FileName="AutomationPracticeCore/.gitignore" Line="438" Column="115" />
+      <File FileName="AutomationPracticeCore/POM/HomePage.cs" Line="30" Column="45" />
+      <File FileName="AutomationPracticeCore/TestCases/Test.cs" Line="28" Column="28" />
+      <File FileName=".gitignore" />
+      <File FileName="AutomationPracticeCore/Locators/SignInLocators.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -9,8 +12,11 @@
           <Node name="AutomationPracticeCore" expanded="True">
             <Node name="AutomationPracticeCore" expanded="True">
               <Node name="References" expanded="True" />
-              <Node name="Packages" expanded="True" />
-              <Node name=".gitignore" selected="True" />
+              <Node name="Locators" expanded="True" />
+              <Node name="POM" expanded="True">
+                <Node name="HomePage.cs" selected="True" />
+              </Node>
+              <Node name="TestCases" expanded="True" />
             </Node>
           </Node>
         </State>
