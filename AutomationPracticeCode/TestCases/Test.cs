@@ -1,4 +1,5 @@
-﻿using AutomationPracticeCore.POM;
+﻿using AutomationPracticeCode.POM;
+using AutomationPracticeCore.POM;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -34,11 +35,23 @@ namespace AutomationPracticeCore
             homePage.SignIn();
         }
 
-        [Test]
+        [Test(Description = "The user is able to edit his/her personal information from 'My Account' module")]
         public void EditMyPersonalInformation()
         {
             HomePage homePage = new HomePage(_driver);
             homePage.SignIn();
+            MyAccountPage myAccount = new MyAccountPage(_driver);
+            myAccount.MyPersonalInformation();
+            PersonalInformationPage personalInformation = new PersonalInformationPage(_driver);
+            personalInformation.EditMandatoryFieldsOnPersonalInformationPage("Rey", "Hernández", "demo@mail.com", "1234");
+        }
+
+        [Test(Description = "Sign out sucessfully")]
+        public void signOutTheAccount()
+        {
+            ValidateSignIn();
+            HomePage homePage = new HomePage(_driver);
+            homePage.SignOut();
         }
 
         [TearDown]

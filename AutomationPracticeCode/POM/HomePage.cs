@@ -17,6 +17,8 @@ namespace AutomationPracticeCore.POM
         private IWebElement emailAddressField;
         private IWebElement passwordField;
 
+        private IWebElement signOutButton;
+
         private IWebElement greenSignInButton;
 
         public HomePage(IWebDriver _driver)
@@ -45,6 +47,14 @@ namespace AutomationPracticeCore.POM
 
             greenSignInButton = _driver.FindElement(By.Id("SubmitLogin"));
             greenSignInButton.Click();
+        }
+
+        public void SignOut()
+        {
+            signInButton = _driver.FindElement(By.ClassName("logout"));
+            signInButton.Click();
+
+            Assert.AreEqual("Sign out", signInButton.Text);
         }
        
     }
