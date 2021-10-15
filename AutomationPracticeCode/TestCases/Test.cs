@@ -1,4 +1,5 @@
-﻿using AutomationPracticeCode.POM;
+﻿using AutomationPracticeCode.Locators;
+using AutomationPracticeCode.POM;
 using AutomationPracticeCore.POM;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -10,39 +11,39 @@ namespace AutomationPracticeCore
     public class Test
     {
 
-        private IWebDriver _driver;
+        private IWebDriver EmailTextBoxId;
 
         [SetUp()]
         public void SetUp()
         {
-            _driver = new ChromeDriver();
-            _driver.Manage().Cookies.DeleteAllCookies();
-            _driver.Manage().Window.Maximize();
-            _driver.Url = "http://automationpractice.com/index.php";
+            EmailTextBoxId = new ChromeDriver();
+            EmailTextBoxId.Manage().Cookies.DeleteAllCookies();
+            EmailTextBoxId.Manage().Window.Maximize();
+            EmailTextBoxId.Url = MainConstants.url;
         }
 
         [Test()]
         public void SearchProduct()
         {
-            HomePage homePage = new HomePage(_driver);
+            HomePage homePage = new HomePage(EmailTextBoxId);
             homePage.Search();
         }
 
         [Test()]
         public void ValidateSignIn()
         {
-            HomePage homePage = new HomePage(_driver);
+            HomePage homePage = new HomePage(EmailTextBoxId);
             homePage.SignIn();
         }
 
         [Test(Description = "The user is able to edit his/her personal information from 'My Account' module")]
         public void EditMyPersonalInformation()
         {
-            HomePage homePage = new HomePage(_driver);
+            HomePage homePage = new HomePage(EmailTextBoxId);
             homePage.SignIn();
-            MyAccountPage myAccount = new MyAccountPage(_driver);
+            MyAccountPage myAccount = new MyAccountPage(EmailTextBoxId);
             myAccount.MyPersonalInformation();
-            PersonalInformationPage personalInformation = new PersonalInformationPage(_driver);
+            PersonalInformationPage personalInformation = new PersonalInformationPage(EmailTextBoxId);
             personalInformation.EditMandatoryFieldsOnPersonalInformationPage("Rey", "Hernández", "demo@mail.com", "1234");
         }
 
@@ -50,15 +51,15 @@ namespace AutomationPracticeCore
         public void signOutTheAccount()
         {
             ValidateSignIn();
-            HomePage homePage = new HomePage(_driver);
+            HomePage homePage = new HomePage(EmailTextBoxId);
             homePage.SignOut();
         }
 
         [TearDown]
         public void TearDown()
         {
-            _driver.Close();
-            _driver.Quit();
+            EmailTextBoxId.Close();
+            EmailTextBoxId.Quit();
         } 
     }
 }

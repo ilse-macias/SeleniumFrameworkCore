@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AutomationPracticeCode.Constants;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,19 +24,19 @@ namespace AutomationPracticeCode.POM
 
         public void EditMandatoryFieldsOnPersonalInformationPage(string firstName, string lastName, string email, string currentPassword)
         {
-            firstNameField = _driver.FindElement(By.Id("firstname"));
+            firstNameField = _driver.FindElement(By.Id(PersonalInformationConstants.FirstNameId));
             firstNameField.SendKeys(firstName);
 
-            lastNameField = _driver.FindElement(By.Id("lastname"));
+            lastNameField = _driver.FindElement(By.Id(PersonalInformationConstants.LastNameId));
             lastNameField.SendKeys(lastName);
 
-            emailAddressField = _driver.FindElement(By.Id("email"));
+            emailAddressField = _driver.FindElement(By.Id(PersonalInformationConstants.EmailId));
             emailAddressField.SendKeys(email);
 
-            currentPasswordField = _driver.FindElement(By.Id("old_passwd"));
+            currentPasswordField = _driver.FindElement(By.Id(PersonalInformationConstants.CurrentPasswordId));
             currentPasswordField.SendKeys(currentPassword);
 
-            saveButton = _driver.FindElement(By.Name("submitIdentity"));
+            saveButton = _driver.FindElement(By.Name(PersonalInformationConstants.SaveButtonId));
             saveButton.Click();
         }
     }

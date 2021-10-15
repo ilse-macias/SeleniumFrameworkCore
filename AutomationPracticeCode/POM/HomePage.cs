@@ -1,4 +1,6 @@
 ﻿using System.Threading;
+using AutomationPracticeCode.Constants;
+using AutomationPracticeCore.Constants;
 using NUnit.Framework;
 using OpenQA.Selenium;
 
@@ -35,26 +37,26 @@ namespace AutomationPracticeCore.POM
         }
         public void SignIn()
         {
-            signInButton = _driver.FindElement(By.ClassName("login"));
+            signInButton = _driver.FindElement(By.ClassName(HomePageConstants.signInButtonClass));
             signInButton.Click();
             Thread.Sleep(3000);
 
-            emailAddressField = _driver.FindElement(By.Id("email"));
-            emailAddressField.SendKeys("demo@mailinator.com");
+            emailAddressField = _driver.FindElement(By.Id(MyAccontConstants.EmailTextBoxId));
+            emailAddressField.SendKeys(MyAccontConstants.EmailInput);
 
-            passwordField = _driver.FindElement(By.Id("passwd"));
-            passwordField.SendKeys("123456");
+            passwordField = _driver.FindElement(By.Id(MyAccontConstants.PasswordTextBoxId));
+            passwordField.SendKeys(MyAccontConstants.PasswordInput);
 
-            greenSignInButton = _driver.FindElement(By.Id("SubmitLogin"));
+            greenSignInButton = _driver.FindElement(By.Id(MyAccontConstants.SubmitButtonId));
             greenSignInButton.Click();
         }
 
         public void SignOut()
         {
-            signInButton = _driver.FindElement(By.ClassName("logout"));
-            signInButton.Click();
+            signOutButton = _driver.FindElement(By.ClassName("logout"));
+            signOutButton.Click();
 
-            Assert.AreEqual("Sign out", signInButton.Text);
+            Assert.AreEqual("Sign out", signOutButton.Text);
         }
        
     }
