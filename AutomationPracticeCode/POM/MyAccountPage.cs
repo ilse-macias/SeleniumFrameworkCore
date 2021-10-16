@@ -1,15 +1,11 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutomationPracticeCode.POM
 {
     public class MyAccountPage
     {
         private IWebDriver _driver;
+
         private IWebElement accountNameButton;
         private IWebElement myPersonalInformationButton;
 
