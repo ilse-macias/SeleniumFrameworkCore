@@ -11,39 +11,39 @@ namespace AutomationPracticeCore
     public class Test
     {
 
-        private IWebDriver EmailTextBoxId;
+        private IWebDriver driver;
 
         [SetUp()]
         public void SetUp()
         {
-            EmailTextBoxId = new ChromeDriver();
-            EmailTextBoxId.Manage().Cookies.DeleteAllCookies();
-            EmailTextBoxId.Manage().Window.Maximize();
-            EmailTextBoxId.Url = MainConstants.url;
+            driver = new ChromeDriver();
+            driver.Manage().Cookies.DeleteAllCookies();
+            driver.Manage().Window.Maximize();
+            driver.Url = MainConstants.url;
         }
 
-        [Test()]
+        [Test(Description = "Search a product.")]
         public void SearchProduct()
         {
-            HomePage homePage = new HomePage(EmailTextBoxId);
-            homePage.Search();
+            CoreFunctionality core = new CoreFunctionality(driver);
+            core.Search("blouse");
         }
 
-        [Test()]
+        [Test(Description = "Validate the user is able to sign in successfully.")]
         public void ValidateSignIn()
         {
-            HomePage homePage = new HomePage(EmailTextBoxId);
+            HomePage homePage = new HomePage(driver);
             homePage.SignIn();
         }
 
         [Test(Description = "The user is able to edit his/her personal information from 'My Account' module")]
         public void EditMyPersonalInformation()
         {
-            HomePage homePage = new HomePage(EmailTextBoxId);
+            HomePage homePage = new HomePage(driver);
             homePage.SignIn();
-            MyAccountPage myAccount = new MyAccountPage(EmailTextBoxId);
+            MyAccountPage myAccount = new MyAccountPage(driver);
             myAccount.MyPersonalInformation();
-            PersonalInformationPage personalInformation = new PersonalInformationPage(EmailTextBoxId);
+            PersonalInformationPage personalInformation = new PersonalInformationPage(driver);
             personalInformation.EditMandatoryFieldsOnPersonalInformationPage("Rey", "Hernández", "demo@mail.com", "1234");
         }
 
@@ -51,15 +51,15 @@ namespace AutomationPracticeCore
         public void signOutTheAccount()
         {
             ValidateSignIn();
-            HomePage homePage = new HomePage(EmailTextBoxId);
+            HomePage homePage = new HomePage(driver);
             homePage.SignOut();
         }
 
         [TearDown]
         public void TearDown()
         {
-            EmailTextBoxId.Close();
-            EmailTextBoxId.Quit();
+            driver.Close();
+            driver.Quit();
         } 
     }
 }

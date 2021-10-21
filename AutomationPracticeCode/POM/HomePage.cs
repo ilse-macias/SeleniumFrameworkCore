@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using AutomationPracticeCode.Constants;
+using AutomationPracticeCode.Locators;
 using AutomationPracticeCore.Constants;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -8,8 +9,7 @@ namespace AutomationPracticeCore.POM
 {
     public class HomePage
     {
-        public IWebDriver _driver;
-
+        private IWebDriver _driver;
 
         private IWebElement searchBar;
         private IWebElement searchIcon;
@@ -28,13 +28,13 @@ namespace AutomationPracticeCore.POM
             this._driver = _driver;
         }
 
-        public void Search()
-        {
-            searchBar = _driver.FindElement(By.Id("search_query_top"));
-            searchBar.SendKeys("blouse");
-            searchIcon = _driver.FindElement(By.CssSelector(".btn.btn-default.button-search"));
+        //public void Search()
+        //{
+        //    searchBar = _driver.FindElement(By.Id(MainConstants.searchBarId));
+        //    searchBar.SendKeys("blouse");
+        //    searchIcon = _driver.FindElement(By.CssSelector(MainConstants.searchIconCss));
+        //}
 
-        }
         public void SignIn()
         {
             signInButton = _driver.FindElement(By.ClassName(HomePageConstants.signInButtonClass));
@@ -59,5 +59,10 @@ namespace AutomationPracticeCore.POM
             Assert.AreEqual("Sign out", signOutButton.Text);
         }
        
+
+        public void ViewAProduct()
+        {
+
+        }
     }
 }
